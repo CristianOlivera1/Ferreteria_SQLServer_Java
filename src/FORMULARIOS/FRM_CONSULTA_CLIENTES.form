@@ -123,9 +123,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="jPanel5" min="-2" pref="25" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jtxtdni" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                                   <Component id="jbtnmostrar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -138,7 +138,7 @@
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jbttodos" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jbtnsalir" alignment="3" min="-2" max="-2" attributes="0"/>

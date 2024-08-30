@@ -67,9 +67,9 @@
                                       <Component id="jBtnEliminar" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jBtnCancelar" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jBtnSalir" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jBtnCancelar" max="32767" attributes="0"/>
+                                      <Component id="jBtnSalir" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -89,7 +89,7 @@
                           <Component id="jBtnEditar" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="222" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Component id="kGradientPanel2" alignment="0" max="32767" attributes="0"/>
           </Group>
@@ -185,7 +185,7 @@
         <Component class="javax.swing.JButton" name="jBtnCancelar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/IMAGENES/cancela.png"/>
+              <Image iconType="3" name="/IMAGENES/cancelar3.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="CANCELAR"/>
           </Properties>
@@ -196,7 +196,7 @@
         <Component class="javax.swing.JButton" name="jBtnEliminar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/IMAGENES/Eliminarr.png"/>
+              <Image iconType="3" name="/IMAGENES/delete_12523095.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="ELIMINAR"/>
           </Properties>
@@ -207,7 +207,7 @@
         <Component class="javax.swing.JButton" name="jBtnEditar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/IMAGENES/Reporte I.png"/>
+              <Image iconType="3" name="/IMAGENES/editar2.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="EDITAR"/>
           </Properties>
@@ -218,7 +218,7 @@
         <Component class="javax.swing.JButton" name="jBtnNuevo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/IMAGENES/nuevo.png"/>
+              <Image iconType="3" name="/IMAGENES/nuevo2.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="NUEVO"/>
           </Properties>
@@ -229,7 +229,7 @@
         <Component class="javax.swing.JButton" name="jBtnGuardar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/IMAGENES/guardar.png"/>
+              <Image iconType="3" name="/IMAGENES/Guardar2.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="GUADAR"/>
           </Properties>

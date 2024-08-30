@@ -10,12 +10,6 @@ import javax.swing.table.DefaultTableModel;
 public class FRM_CONSULTA_CLIENTES extends javax.swing.JFrame {
 conectaBD cnx=new conectaBD();
 
-
-  public void icono(){
-      Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IMAGENES/iconpais.jpg"));
-      setIconImage(icon);
-      setVisible(true);
-    }
     
  public void LimpiarTabla(DefaultTableModel model){
   int x;
@@ -307,7 +301,6 @@ conectaBD cnx=new conectaBD();
 
  private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
    String sql="SELECT*FROM V_MANTENIMIENTO_CLIENTE";
-  icono();
   this.jrb1.setSelected(true);
   this.jtxtnombre.setEnabled(false);
  cnx.conectar();

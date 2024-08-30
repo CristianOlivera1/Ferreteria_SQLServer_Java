@@ -12,12 +12,6 @@ public class FRM_VENTA_DIA extends javax.swing.JFrame {
   Date ahora = new Date(System.currentTimeMillis());
  SimpleDateFormat fecha = new SimpleDateFormat("dd/MM/yyyy");
   
-  
-    public void icono(){
-      Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagenes/sunat.png"));
-      setIconImage(icon);
-      setVisible(true);
-    }
        public void MostrarVentas(){
       String sql;
       sql="SELECT * FROM V_DIA WHERE fecha ='"+ahora+"'";
@@ -141,7 +135,7 @@ public class FRM_VENTA_DIA extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-       icono();
+
       cnx.conectar();
       MostrarVentas();
     }//GEN-LAST:event_formWindowOpened

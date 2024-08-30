@@ -13,6 +13,7 @@ int ban=0;
  public FRM_ACCESO_SISTEMA() {
   initComponents();
   this.setLocationRelativeTo(null);
+  jTxtUsuario.setText("administrador");
 
  }
  @SuppressWarnings("unchecked")

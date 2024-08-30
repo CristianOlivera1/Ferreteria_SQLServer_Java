@@ -26,12 +26,6 @@ public class FRM_VENTA_PRODUCTO_BOLETA extends javax.swing.JFrame {
  String sql = "SELECT * FROM V_MANTENIMIENTO_PRODUCTO ORDER BY nombre";
  String sql21=" SELECT * FROM V_MANTENIMIENTO_PRODUCTO WHERE fecha_venci >'"+ahora+"' ORDER BY nombre";
 
-
- public void icono() {
-  Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagenes/home.png"));
-  setIconImage(icon);
-  setVisible(true);
- }
  
  public void Cajas(boolean estado) {
   this.jtxtbuscar.setEnabled(estado);
@@ -648,7 +642,8 @@ public class FRM_VENTA_PRODUCTO_BOLETA extends javax.swing.JFrame {
         jtxtnomempleado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jtxtnomempleado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jbtne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/iempleado.jpg"))); // NOI18N
+        jbtne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/buscar boton.png"))); // NOI18N
+        jbtne.setBorder(null);
         jbtne.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtneActionPerformed(evt);
@@ -687,9 +682,9 @@ public class FRM_VENTA_PRODUCTO_BOLETA extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jtxtnomempleado, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(28, 28, 28)
                 .addComponent(jbtne, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap(78, Short.MAX_VALUE))
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
@@ -1393,7 +1388,6 @@ try{
  private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 cnx.conectar();
      
- icono();
  this.jdcfecha.setDate(ahora);
  Cajas(false);
  Botones(true);

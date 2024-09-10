@@ -10,19 +10,19 @@ También incluye funcionalidades para realizar consultas de **ventas del día**,
 
 ### 🔐 Login
 Pantalla de autenticación donde los usuarios ingresan sus credenciales para acceder al sistema.  
-![Login](capturas/1.login.png)
+![Login](interfaces/1.login.png)
 
 ### 📝 Registrarse
 Pantalla donde los usuarios pueden crear sus cuentas para acceder al sistema.  
-![Registrarse](capturas/2.register.png)
+![Registrarse](interfaces/2.register.png)
 
 ### 🏠 Menú Principal
 Vista inicial del sistema después de iniciar sesión, que proporciona acceso a todas las funciones principales del software.  
-![Menú Principal](capturas/3.principal.png)
+![Menú Principal](interfaces/3.principal.png)
 
 ### 💵 Ventas
 Interfaz para procesar las ventas, incluyendo la revisión y finalización de la transacción.  
-![Ventas](capturas/4.ventas.png)
+![Ventas](interfaces/4.ventas.png)
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -45,7 +45,7 @@ Interfaz para procesar las ventas, incluyendo la revisión y finalización de la
    ```bash
    git clone https://github.com/CristianOlivera1/Ferreteria_SQLServer_Java.git
    ```
-2. Ejecute el Script de la base de datos (bdferreteria.txt):
+2. Ejecute el Script de la base de datos (BDFERRETERIA.sql):
    Ejecutelo en SQLServer
 2. Añada las dependencias al proyecto
-   Las librearias entan en la caroeta librerias rede ahi podra añadir los jar necesarios para que el proyecto se ejecute de forma correcta
+   Las librerias entan en la carpeta librerias desde ahi podras añadir los jar necesarios para que el proyecto se ejecute de forma correcta.

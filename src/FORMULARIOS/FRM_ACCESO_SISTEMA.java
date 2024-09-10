@@ -27,13 +27,13 @@ int ban=0;
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         JpswdClave = new javax.swing.JPasswordField();
-        jBtnIngresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         panelRedondo2 = new FORMULARIOS.PanelRedondo();
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jBtnIngresar1 = new javax.swing.JButton();
+        jBtnIngresar1 = new com.k33ptoo.components.KButton();
+        jBtnIngresar = new com.k33ptoo.components.KButton();
 
         jLabel6.setText("jLabel6");
 
@@ -53,6 +53,7 @@ int ban=0;
         jTxtUsuario.setToolTipText("");
         jTxtUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTxtUsuario.setName(""); // NOI18N
+        jTxtUsuario.setOpaque(true);
         jTxtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTxtUsuarioKeyPressed(evt);
@@ -69,6 +70,7 @@ int ban=0;
 
         JpswdClave.setFont(new java.awt.Font("Poppins Medium", 0, 12)); // NOI18N
         JpswdClave.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        JpswdClave.setOpaque(true);
         JpswdClave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JpswdClaveActionPerformed(evt);
@@ -77,16 +79,6 @@ int ban=0;
         JpswdClave.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 JpswdClaveKeyPressed(evt);
-            }
-        });
-
-        jBtnIngresar.setFont(new java.awt.Font("Poppins Medium", 0, 12)); // NOI18N
-        jBtnIngresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/ingresar.png"))); // NOI18N
-        jBtnIngresar.setText("        INICIAR SESIÓN      ");
-        jBtnIngresar.setBorder(null);
-        jBtnIngresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnIngresarActionPerformed(evt);
             }
         });
 
@@ -120,15 +112,32 @@ int ban=0;
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/contraseña-20.png"))); // NOI18N
 
-        jBtnIngresar1.setBackground(new java.awt.Color(235, 235, 235));
+        jBtnIngresar1.setText("REGISTRARSE");
         jBtnIngresar1.setFont(new java.awt.Font("Poppins Medium", 0, 12)); // NOI18N
-        jBtnIngresar1.setForeground(new java.awt.Color(37, 128, 217));
-        jBtnIngresar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/register.png"))); // NOI18N
-        jBtnIngresar1.setText("        REGISTRARSE         ");
-        jBtnIngresar1.setBorder(null);
+        jBtnIngresar1.setkEndColor(new java.awt.Color(255, 255, 255));
+        jBtnIngresar1.setkFillButton(false);
+        jBtnIngresar1.setkHoverColor(new java.awt.Color(204, 204, 204));
+        jBtnIngresar1.setkHoverEndColor(new java.awt.Color(51, 255, 255));
+        jBtnIngresar1.setkHoverForeGround(new java.awt.Color(0, 204, 204));
+        jBtnIngresar1.setkHoverStartColor(new java.awt.Color(0, 255, 255));
+        jBtnIngresar1.setkPressedColor(new java.awt.Color(255, 255, 255));
+        jBtnIngresar1.setkStartColor(new java.awt.Color(255, 255, 255));
         jBtnIngresar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnIngresar1ActionPerformed(evt);
+            }
+        });
+
+        jBtnIngresar.setText("INICIAR SESIÓN");
+        jBtnIngresar.setkEndColor(new java.awt.Color(255, 255, 255));
+        jBtnIngresar.setkForeGround(new java.awt.Color(0, 0, 0));
+        jBtnIngresar.setkHoverEndColor(new java.awt.Color(220, 220, 220));
+        jBtnIngresar.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        jBtnIngresar.setkHoverStartColor(new java.awt.Color(220, 220, 220));
+        jBtnIngresar.setkStartColor(new java.awt.Color(255, 255, 255));
+        jBtnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnIngresarActionPerformed(evt);
             }
         });
 
@@ -140,6 +149,9 @@ int ban=0;
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addGroup(panelPadre2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelPadre2Layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(panelRedondo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelPadre2Layout.createSequentialGroup()
                         .addGap(101, 101, 101)
                         .addGroup(panelPadre2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -153,11 +165,8 @@ int ban=0;
                                 .addComponent(jLabel5))
                             .addComponent(JpswdClave)
                             .addComponent(jTxtUsuario)
-                            .addComponent(jBtnIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jBtnIngresar1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)))
-                    .addGroup(panelPadre2Layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(panelRedondo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jBtnIngresar1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                            .addComponent(jBtnIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(91, Short.MAX_VALUE))
         );
         panelPadre2Layout.setVerticalGroup(
@@ -180,9 +189,9 @@ int ban=0;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(JpswdClave, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jBtnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jBtnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jBtnIngresar1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jBtnIngresar1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelPadre2Layout.createSequentialGroup()
                         .addGap(89, 89, 89)
                         .addComponent(jLabel1)))
@@ -247,10 +256,6 @@ int ban=0;
 }
 //JPanel dentro de otro para el registro
 
- private void jBtnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIngresarActionPerformed
-  ingresar();
- }//GEN-LAST:event_jBtnIngresarActionPerformed
-
  private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
   cnx.conectar();
   this.jTxtUsuario.requestFocus();
@@ -275,9 +280,12 @@ int ban=0;
  }//GEN-LAST:event_JpswdClaveKeyPressed
 
     private void jBtnIngresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIngresar1ActionPerformed
-        // TODO add your handling code here:
-        ShowPanel(registro);
+  ShowPanel(registro);
     }//GEN-LAST:event_jBtnIngresar1ActionPerformed
+
+    private void jBtnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIngresarActionPerformed
+      ingresar();
+    }//GEN-LAST:event_jBtnIngresarActionPerformed
 private void ShowPanel(JPanel p) {
     p.setSize(777, 491);
     p.setLocation(0, 0);
@@ -321,8 +329,8 @@ private void ShowPanel(JPanel p) {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField JpswdClave;
-    private javax.swing.JButton jBtnIngresar;
-    private javax.swing.JButton jBtnIngresar1;
+    private com.k33ptoo.components.KButton jBtnIngresar;
+    private com.k33ptoo.components.KButton jBtnIngresar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -23,12 +23,12 @@ public class FRM_MANTENIMIENTO_MARCA extends javax.swing.JFrame {
     }
     private TableRowSorter trsFiltro;
 
-    public void buscarcategoria() {
+    public void buscarmarca() {
         int Buscar = 0;
-        if (jtxtbuscar.getText() == "MARCA") {
+        if (jtxtbuscar.getText() == "nombre") {
             Buscar = 0;
         }
-        trsFiltro.setRowFilter(RowFilter.regexFilter(jtxtbuscar.getText(), 1, Buscar));
+        trsFiltro.setRowFilter(RowFilter.regexFilter("(?i)"+jtxtbuscar.getText(), 1, Buscar));
     }
 
     public void Limpiar() {
@@ -193,11 +193,8 @@ public class FRM_MANTENIMIENTO_MARCA extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/buscar_1.png"))); // NOI18N
 
-        jtxtbuscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jtxtbuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         jtxtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jtxtbuscarKeyReleased(evt);
-            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jtxtbuscarKeyTyped(evt);
             }
@@ -208,8 +205,8 @@ public class FRM_MANTENIMIENTO_MARCA extends javax.swing.JFrame {
         panelRedondo1Layout.setHorizontalGroup(
             panelRedondo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRedondo1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jtxtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(jtxtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -440,7 +437,7 @@ public void sololetras(JTextField a) {
              String cadena = (jtxtbuscar.getText());
              jtxtbuscar.setText(cadena);
              repaint();
-             buscarcategoria();
+             buscarmarca();
          }
      });
      trsFiltro = new TableRowSorter(jtbcategoria.getModel());
@@ -450,10 +447,6 @@ public void sololetras(JTextField a) {
  private void jtbcategoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtbcategoriaMouseClicked
      Mostrar();
  }//GEN-LAST:event_jtbcategoriaMouseClicked
-
- private void jtxtbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtbuscarKeyReleased
-     convertiraMayusculas(jtxtbuscar);  // TODO add your handling code here:
- }//GEN-LAST:event_jtxtbuscarKeyReleased
 
  private void jBtnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnNuevoActionPerformed
      Sw = 0;

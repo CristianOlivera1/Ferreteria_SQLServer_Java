@@ -111,11 +111,6 @@ public class FRM_VENTA_PRODUCTO_BOLETA extends javax.swing.JFrame {
             }
         }   
     }
-
- 
- 
- 
- 
   public void CalcularTotal() {
   double total = 0;
   for (int fila = 0; fila <= this.jTblDetalleVenta.getRowCount() - 1; fila++) {
@@ -146,8 +141,6 @@ public class FRM_VENTA_PRODUCTO_BOLETA extends javax.swing.JFrame {
   
  }
  
- 
-
  public void LimpiarTabla(DefaultTableModel tbl) {
   for (int x = tbl.getRowCount() - 1; x >= 0; x--) {
    tbl.removeRow(x);
@@ -199,8 +192,6 @@ public class FRM_VENTA_PRODUCTO_BOLETA extends javax.swing.JFrame {
   }); 
  }
  
- 
-
  public FRM_VENTA_PRODUCTO_BOLETA() {
   initComponents();
   this.setResizable(false);
@@ -382,7 +373,7 @@ public class FRM_VENTA_PRODUCTO_BOLETA extends javax.swing.JFrame {
         jtxtbuscar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jtxtbuscar.setForeground(new java.awt.Color(0, 0, 255));
         jtxtbuscar.setToolTipText("BUSCAR  PRODUTO");
-        jtxtbuscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jtxtbuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         jtxtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jtxtbuscarKeyPressed(evt);
@@ -397,9 +388,9 @@ public class FRM_VENTA_PRODUCTO_BOLETA extends javax.swing.JFrame {
         panelRedondo3Layout.setHorizontalGroup(
             panelRedondo3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRedondo3Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(jtxtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(jLabel16)
                 .addContainerGap())
         );
@@ -1315,7 +1306,7 @@ public void guardar(){
       //r = JOptionPane.showConfirmDialog(null, "Registrar Venta", "Guardar Datos", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
      // if (r == JOptionPane.YES_OPTION) {
        col1 = this.jlblnumventa.getText();
-       col2 = fecha.format(this.jdcfecha.getDate());
+       col2 = new SimpleDateFormat("yyyy-MM-dd").format(this.jdcfecha.getDate());
        col8 = this.jtxtcodempleado.getText();
        col3 = this.jtxtcodcliente.getText();
        

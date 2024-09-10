@@ -75,11 +75,11 @@ conectaBD cnx=new conectaBD();
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jBtnIngresar = new javax.swing.JButton();
-        jBtnIngresar1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         JpswdConfirmarClave = new javax.swing.JPasswordField();
+        jBtnIngresar = new com.k33ptoo.components.KButton();
+        jBtnIngresar2 = new com.k33ptoo.components.KButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -148,28 +148,6 @@ conectaBD cnx=new conectaBD();
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/contraseña-20.png"))); // NOI18N
 
-        jBtnIngresar.setBackground(new java.awt.Color(235, 235, 235));
-        jBtnIngresar.setFont(new java.awt.Font("Poppins Medium", 0, 12)); // NOI18N
-        jBtnIngresar.setForeground(new java.awt.Color(30, 128, 218));
-        jBtnIngresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/ingresar.png"))); // NOI18N
-        jBtnIngresar.setText("        INICIAR SESIÓN      ");
-        jBtnIngresar.setBorder(null);
-        jBtnIngresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnIngresarActionPerformed(evt);
-            }
-        });
-
-        jBtnIngresar1.setFont(new java.awt.Font("Poppins Medium", 0, 12)); // NOI18N
-        jBtnIngresar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/register.png"))); // NOI18N
-        jBtnIngresar1.setText("        REGISTRARSE         ");
-        jBtnIngresar1.setBorder(null);
-        jBtnIngresar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnIngresar1ActionPerformed(evt);
-            }
-        });
-
         jLabel6.setFont(new java.awt.Font("Poppins Medium", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("CONFIRMAR CONTRASEÑA");
@@ -189,15 +167,49 @@ conectaBD cnx=new conectaBD();
             }
         });
 
+        jBtnIngresar.setText("INICIAR SESIÓN");
+        jBtnIngresar.setFont(new java.awt.Font("Poppins Medium", 0, 12)); // NOI18N
+        jBtnIngresar.setkEndColor(new java.awt.Color(255, 255, 255));
+        jBtnIngresar.setkFillButton(false);
+        jBtnIngresar.setkHoverColor(new java.awt.Color(204, 204, 204));
+        jBtnIngresar.setkHoverEndColor(new java.awt.Color(51, 255, 255));
+        jBtnIngresar.setkHoverForeGround(new java.awt.Color(0, 204, 204));
+        jBtnIngresar.setkHoverStartColor(new java.awt.Color(0, 255, 255));
+        jBtnIngresar.setkPressedColor(new java.awt.Color(255, 255, 255));
+        jBtnIngresar.setkStartColor(new java.awt.Color(255, 255, 255));
+        jBtnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnIngresarActionPerformed(evt);
+            }
+        });
+
+        jBtnIngresar2.setText("REGISTRARSE");
+        jBtnIngresar2.setkEndColor(new java.awt.Color(255, 255, 255));
+        jBtnIngresar2.setkForeGround(new java.awt.Color(0, 0, 0));
+        jBtnIngresar2.setkHoverEndColor(new java.awt.Color(220, 220, 220));
+        jBtnIngresar2.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        jBtnIngresar2.setkHoverStartColor(new java.awt.Color(220, 220, 220));
+        jBtnIngresar2.setkStartColor(new java.awt.Color(255, 255, 255));
+        jBtnIngresar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnIngresar2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelHijo2Layout = new javax.swing.GroupLayout(panelHijo2);
         panelHijo2.setLayout(panelHijo2Layout);
         panelHijo2Layout.setHorizontalGroup(
             panelHijo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelHijo2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelRedondo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(110, 110, 110))
             .addGroup(panelHijo2Layout.createSequentialGroup()
                 .addGap(75, 75, 75)
                 .addComponent(jLabel1)
                 .addGap(79, 79, 79)
                 .addGroup(panelHijo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jBtnIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panelHijo2Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18)
@@ -211,47 +223,42 @@ conectaBD cnx=new conectaBD();
                         .addGap(18, 18, 18)
                         .addComponent(jLabel5))
                     .addComponent(JpswdClave)
-                    .addComponent(jBtnIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBtnIngresar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTxtUsuario)
-                    .addComponent(JpswdConfirmarClave, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JpswdConfirmarClave, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                    .addComponent(jBtnIngresar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(132, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelHijo2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panelRedondo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(110, 110, 110))
         );
         panelHijo2Layout.setVerticalGroup(
             panelHijo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelHijo2Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addComponent(panelRedondo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(panelHijo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(17, 17, 17)
+                .addGroup(panelHijo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(panelHijo2Layout.createSequentialGroup()
                         .addGroup(panelHijo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTxtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(17, 17, 17)
                         .addGroup(panelHijo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(JpswdClave, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(17, 17, 17)
                         .addGroup(panelHijo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(jLabel8))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(JpswdConfirmarClave, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 13, 13)
-                        .addComponent(jBtnIngresar1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                        .addComponent(jBtnIngresar2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jBtnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addGap(17, 17, 17)
+                .addComponent(jBtnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelHijoLayout = new javax.swing.GroupLayout(panelHijo);
@@ -279,14 +286,6 @@ conectaBD cnx=new conectaBD();
     private void JpswdClaveKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JpswdClaveKeyPressed
       
     }//GEN-LAST:event_JpswdClaveKeyPressed
-
-    private void jBtnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIngresarActionPerformed
-    FRM_ACCESO_SISTEMA login = new FRM_ACCESO_SISTEMA();
-        JPanel loginPanel = login.getMainPanel(); // Obtén el JPanel desde el JFrame
-        ShowPanel(loginPanel);
-       
-     
-    }//GEN-LAST:event_jBtnIngresarActionPerformed
   private void ShowPanel(JPanel p) {
         p.setSize(777, 491);
         p.setLocation(0, 0);
@@ -295,11 +294,6 @@ conectaBD cnx=new conectaBD();
         panelHijo2.validate();
         panelHijo2.repaint();
     }
-    private void jBtnIngresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIngresar1ActionPerformed
-        // TODO add your handling code here:
-        registrar();
-    }//GEN-LAST:event_jBtnIngresar1ActionPerformed
-
     private void JpswdConfirmarClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JpswdConfirmarClaveActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JpswdConfirmarClaveActionPerformed
@@ -308,12 +302,22 @@ conectaBD cnx=new conectaBD();
         // TODO add your handling code here:
     }//GEN-LAST:event_JpswdConfirmarClaveKeyPressed
 
+    private void jBtnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIngresarActionPerformed
+    FRM_ACCESO_SISTEMA login = new FRM_ACCESO_SISTEMA();
+        JPanel loginPanel = login.getMainPanel(); // Obtén el JPanel desde el JFrame
+        ShowPanel(loginPanel);
+    }//GEN-LAST:event_jBtnIngresarActionPerformed
+
+    private void jBtnIngresar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIngresar2ActionPerformed
+         registrar();   
+    }//GEN-LAST:event_jBtnIngresar2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField JpswdClave;
     private javax.swing.JPasswordField JpswdConfirmarClave;
-    private javax.swing.JButton jBtnIngresar;
-    private javax.swing.JButton jBtnIngresar1;
+    private com.k33ptoo.components.KButton jBtnIngresar;
+    private com.k33ptoo.components.KButton jBtnIngresar2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

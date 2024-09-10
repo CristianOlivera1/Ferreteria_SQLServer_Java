@@ -17,13 +17,14 @@ public class FRM_MANTENIMIENTO_CARGO extends javax.swing.JFrame {
  String cadena= (jTextfieldS.getText()).toUpperCase();
  jTextfieldS.setText(cadena);
  }
+      //buscar cargo
  private TableRowSorter trsFiltro;
-public void buscarcategoria() {
+public void buscarcargo() {
         int Buscar = 0;
-        if (jtxtbuscar.getText() =="CARGO") {
+        if (jtxtbuscar.getText() =="nombre") {
             Buscar = 0;
         }       
-        trsFiltro.setRowFilter(RowFilter.regexFilter(jtxtbuscar.getText(),1, Buscar));
+        trsFiltro.setRowFilter(RowFilter.regexFilter("(?i)" +jtxtbuscar.getText(),1, Buscar));
     }
 public void Limpiar() {
 this.jtxtcodigo.setText("");
@@ -249,7 +250,7 @@ public void Mostrar(){
 
         jLabel12.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(245, 245, 245));
-        jLabel12.setText("BUSCAR POR CÓDIGO:");
+        jLabel12.setText("BUSCAR:");
 
         panelRedondo1.setBackground(new java.awt.Color(255, 255, 255));
         panelRedondo1.setRoundBottomLeft(20);
@@ -259,11 +260,8 @@ public void Mostrar(){
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/buscar_1.png"))); // NOI18N
 
-        jtxtbuscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jtxtbuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         jtxtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jtxtbuscarKeyReleased(evt);
-            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jtxtbuscarKeyTyped(evt);
             }
@@ -274,8 +272,8 @@ public void Mostrar(){
         panelRedondo1Layout.setHorizontalGroup(
             panelRedondo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRedondo1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jtxtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jtxtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -431,7 +429,7 @@ Cajas(false);
     String cadena = (jtxtbuscar.getText());
     jtxtbuscar.setText(cadena);
     repaint();
-    buscarcategoria();
+    buscarcargo();
    }
   });
   trsFiltro = new TableRowSorter(jtbcargo.getModel());
@@ -441,10 +439,6 @@ Cajas(false);
  private void jtbcargoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtbcargoMouseClicked
 Mostrar();
  }//GEN-LAST:event_jtbcargoMouseClicked
-
- private void jtxtbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtbuscarKeyReleased
-convertiraMayusculas(jtxtbuscar);  // TODO add your handling code here:
- }//GEN-LAST:event_jtxtbuscarKeyReleased
 
  private void jBtnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnNuevoActionPerformed
   Sw = 0;

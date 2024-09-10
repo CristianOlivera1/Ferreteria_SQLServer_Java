@@ -31,13 +31,14 @@ public class FRM_MANTENIMIENTO_EMPLEADO extends javax.swing.JFrame {
       setIconImage(icon);
       setVisible(true);
     }
+     //buscar empleado por nombre 
  private TableRowSorter trsFiltro;
 public void buscarzona() {
         int Buscar = 0;
-        if (jtxtbuscar.getText() =="DNI") {
+        if (jtxtbuscar.getText().equalsIgnoreCase("nombre")) {
             Buscar = 0;
         }       
-        trsFiltro.setRowFilter(RowFilter.regexFilter(jtxtbuscar.getText(),1, Buscar));
+        trsFiltro.setRowFilter(RowFilter.regexFilter("(?i)" +jtxtbuscar.getText(),2, Buscar));
     }
  public void Limpiar() {
 this.jtxtcod.setText("");
@@ -383,7 +384,7 @@ public void LimpiarTabla(DefaultTableModel model){
 
         jLabel5.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(245, 245, 245));
-        jLabel5.setText("BUSCAR POR DNI:");
+        jLabel5.setText("BUSCAR:");
 
         panelRedondo1.setBackground(new java.awt.Color(255, 255, 255));
         panelRedondo1.setRoundBottomLeft(20);
@@ -391,12 +392,7 @@ public void LimpiarTabla(DefaultTableModel model){
         panelRedondo1.setRoundTopLeft(20);
         panelRedondo1.setRoundTopRight(20);
 
-        jtxtbuscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jtxtbuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxtbuscarActionPerformed(evt);
-            }
-        });
+        jtxtbuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         jtxtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jtxtbuscarKeyTyped(evt);
@@ -410,8 +406,8 @@ public void LimpiarTabla(DefaultTableModel model){
         panelRedondo1Layout.setHorizontalGroup(
             panelRedondo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRedondo1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jtxtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addComponent(jtxtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addContainerGap(11, Short.MAX_VALUE))
@@ -708,10 +704,6 @@ String codcargo="";
  private void jBtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalirActionPerformed
   this.dispose();
  }//GEN-LAST:event_jBtnSalirActionPerformed
-
- private void jtxtbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtbuscarActionPerformed
-  // TODO add your handling code here:
- }//GEN-LAST:event_jtxtbuscarActionPerformed
 
  private void jtxtbuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtbuscarKeyTyped
   jtxtbuscar.addKeyListener(new KeyAdapter() {

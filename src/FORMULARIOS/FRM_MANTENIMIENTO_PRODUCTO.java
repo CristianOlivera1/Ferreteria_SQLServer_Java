@@ -33,12 +33,12 @@ public class FRM_MANTENIMIENTO_PRODUCTO extends javax.swing.JFrame {
       setVisible(true);
     }
  private TableRowSorter trsFiltro;
-public void buscarzona() {
+public void buscarproducto() {
         int Buscar = 0;
         if (jtxtbuscar.getText() =="PRODUCTO") {
             Buscar = 0;
         }       
-        trsFiltro.setRowFilter(RowFilter.regexFilter(jtxtbuscar.getText(),1, Buscar));
+        trsFiltro.setRowFilter(RowFilter.regexFilter("(?i)" + jtxtbuscar.getText(),1, Buscar));
     }
  public void Limpiar() {
     jtxtcod.setText("");
@@ -419,16 +419,13 @@ public void LimpiarTabla(DefaultTableModel model){
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/buscar_1.png"))); // NOI18N
 
-        jtxtbuscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jtxtbuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         jtxtbuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtxtbuscarActionPerformed(evt);
             }
         });
         jtxtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jtxtbuscarKeyReleased(evt);
-            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jtxtbuscarKeyTyped(evt);
             }
@@ -439,8 +436,8 @@ public void LimpiarTabla(DefaultTableModel model){
         panelRedondo3Layout.setHorizontalGroup(
             panelRedondo3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRedondo3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jtxtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addComponent(jtxtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -772,7 +769,7 @@ String codmarca="";
     String cadena = (jtxtbuscar.getText());
     jtxtbuscar.setText(cadena);
     repaint();
-    buscarzona();
+    buscarproducto();
    }
   });
   trsFiltro = new TableRowSorter(jtbproducto.getModel());
@@ -852,10 +849,6 @@ Mostrar();
  private void jtxtproductoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtproductoKeyReleased
 convertiraMayusculas(jtxtproducto);  // TODO add your handling code here:
  }//GEN-LAST:event_jtxtproductoKeyReleased
-
- private void jtxtbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtbuscarKeyReleased
-convertiraMayusculas(jtxtbuscar);  // TODO add your handling code here:
- }//GEN-LAST:event_jtxtbuscarKeyReleased
 
  private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 FRM_MANTENIMIENTO_CATEGORIA cat=new  FRM_MANTENIMIENTO_CATEGORIA();

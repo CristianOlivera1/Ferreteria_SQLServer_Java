@@ -389,7 +389,7 @@ public class FRM_MANTENIMIENTO_CLIENTE extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(245, 245, 245));
-        jLabel12.setText("BUSCAR POR DNI:");
+        jLabel12.setText("BUSCAR:");
 
         panelRedondo1.setBackground(new java.awt.Color(255, 255, 255));
         panelRedondo1.setRoundBottomLeft(20);
@@ -399,10 +399,13 @@ public class FRM_MANTENIMIENTO_CLIENTE extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/buscar_1.png"))); // NOI18N
 
-        jtxtbuscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jtxtbuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         jtxtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jtxtbuscarKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtbuscarKeyTyped(evt);
             }
         });
 
@@ -411,8 +414,8 @@ public class FRM_MANTENIMIENTO_CLIENTE extends javax.swing.JFrame {
         panelRedondo1Layout.setHorizontalGroup(
             panelRedondo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRedondo1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jtxtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jtxtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addContainerGap(11, Short.MAX_VALUE))
@@ -596,7 +599,7 @@ public class FRM_MANTENIMIENTO_CLIENTE extends javax.swing.JFrame {
   }); 
  }
  private void jtxtbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtbuscarKeyReleased
-  String dato= this.jtxtbuscar.getText();
+  /*String dato= this.jtxtbuscar.getText();
   String sql1;
   try{
    
@@ -606,7 +609,7 @@ public class FRM_MANTENIMIENTO_CLIENTE extends javax.swing.JFrame {
    }
    catch(Exception e){
        System.out.println(e.getMessage());
-   }
+   }*/
  }//GEN-LAST:event_jtxtbuscarKeyReleased
 
  private void jtbclienteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtbclienteMousePressed
@@ -737,10 +740,12 @@ public class FRM_MANTENIMIENTO_CLIENTE extends javax.swing.JFrame {
    r=JOptionPane.showConfirmDialog(null,"DESEA ELIMINAR REGISTRO","ESTA SEGURO",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
    if(r==JOptionPane.YES_OPTION){
     cnx.stm.execute(sql);
+    
    }
   }
   catch(Exception e){
    System.out.println(e.getMessage());
+   JOptionPane.showConfirmDialog(null,"ERROR AL ELIMINAR ABANCAY");
   }
   LlenarTabla(sql1);
   jtbcliente.changeSelection(0,0,false,true);
@@ -771,6 +776,28 @@ convertiraMayusculas(jtxtdireccion);  // TODO add your handling code here:
     private void jBtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalirActionPerformed
         this.dispose();
     }//GEN-LAST:event_jBtnSalirActionPerformed
+    //buscar cliente
+    private TableRowSorter trsFiltro;
+    public void buscarcliente() {
+    int Buscar = 0;
+    if (jtxtbuscar.getText().equalsIgnoreCase("nombre")) {
+        Buscar = 0;
+    }
+    trsFiltro.setRowFilter(RowFilter.regexFilter("(?i)" + jtxtbuscar.getText(), 2, Buscar));
+    }
+    private void jtxtbuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtbuscarKeyTyped
+        jtxtbuscar.addKeyListener(new KeyAdapter() {
+         public void keyReleased(final KeyEvent e) {
+             String cadena = (jtxtbuscar.getText());
+             jtxtbuscar.setText(cadena);
+             repaint();
+             buscarcliente();
+         }
+     });
+     trsFiltro = new TableRowSorter(jtbcliente.getModel());
+     jtbcliente.setRowSorter(trsFiltro);
+        
+    }//GEN-LAST:event_jtxtbuscarKeyTyped
 
  /**
   * @param args the command line

@@ -40,7 +40,6 @@ public class FRM_MENU_PRINCIPAL extends javax.swing.JFrame {
         jMiVentaProd = new javax.swing.JMenuItem();
         jMConsultas = new javax.swing.JMenu();
         jMiVentas = new javax.swing.JMenuItem();
-        jMiVencimientoPr = new javax.swing.JMenuItem();
         jMiClientes = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMRepotes = new javax.swing.JMenu();
@@ -50,7 +49,7 @@ public class FRM_MENU_PRINCIPAL extends javax.swing.JFrame {
         jMitemSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("BODEGA");
+        setTitle("MENU PRINCIPAL");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -272,7 +271,7 @@ public class FRM_MENU_PRINCIPAL extends javax.swing.JFrame {
 
         jMiVentas.setFont(new java.awt.Font("Poppins Light", 0, 12)); // NOI18N
         jMiVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/item_venta.png"))); // NOI18N
-        jMiVentas.setText("Ventas al dia");
+        jMiVentas.setText("Historial de Ventas");
         jMiVentas.setToolTipText("Consulta Ventas");
         jMiVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -280,16 +279,6 @@ public class FRM_MENU_PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jMConsultas.add(jMiVentas);
-
-        jMiVencimientoPr.setFont(new java.awt.Font("Poppins Light", 0, 12)); // NOI18N
-        jMiVencimientoPr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/f_vencimiento.png"))); // NOI18N
-        jMiVencimientoPr.setText("Vencimiento de productos");
-        jMiVencimientoPr.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMiVencimientoPrActionPerformed(evt);
-            }
-        });
-        jMConsultas.add(jMiVencimientoPr);
 
         jMiClientes.setFont(new java.awt.Font("Poppins Light", 0, 12)); // NOI18N
         jMiClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/clientes.png"))); // NOI18N
@@ -304,7 +293,7 @@ public class FRM_MENU_PRINCIPAL extends javax.swing.JFrame {
 
         jMenuItem3.setFont(new java.awt.Font("Poppins Light", 0, 12)); // NOI18N
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/ganancia.png"))); // NOI18N
-        jMenuItem3.setText("Ganancia");
+        jMenuItem3.setText("Ganancia del dia");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
@@ -426,11 +415,6 @@ M.show();
        ventas.show();
     }//GEN-LAST:event_jMiVentasActionPerformed
 
-    private void jMiVencimientoPrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMiVencimientoPrActionPerformed
-        FRM_VENCIMIENTO_PRODUCTO producto = new FRM_VENCIMIENTO_PRODUCTO();
-        producto.show();
-    }//GEN-LAST:event_jMiVencimientoPrActionPerformed
-
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         FRM_UTILIDAD C = new FRM_UTILIDAD();//Consultas-ganancias
         C.show();
@@ -477,7 +461,6 @@ M.show();
     private javax.swing.JMenuItem jMiMarca1;
     private javax.swing.JMenuItem jMiProducto1;
     private javax.swing.JMenuItem jMiReporteDia;
-    private javax.swing.JMenuItem jMiVencimientoPr;
     private javax.swing.JMenuItem jMiVentaProd;
     private javax.swing.JMenuItem jMiVentas;
     private javax.swing.JMenuItem jMitemAutores;

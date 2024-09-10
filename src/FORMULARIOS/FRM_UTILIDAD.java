@@ -3,16 +3,17 @@ package FORMULARIOS;
 import BASE.conectaBD;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 public class FRM_UTILIDAD extends javax.swing.JFrame {
     conectaBD cnx= new conectaBD();
     
      Date ahora = new Date(System.currentTimeMillis());
- SimpleDateFormat fecha = new SimpleDateFormat("dd/MM/yyyy");
- 
- 
+
      public void MostrarVentas(){
       String sql;
       sql="SELECT * FROM V_GANANCIA WHERE fecha ='"+ahora+"'";
@@ -28,23 +29,27 @@ public class FRM_UTILIDAD extends javax.swing.JFrame {
     
     public FRM_UTILIDAD() {
         initComponents();
-        this.setLocationRelativeTo(this);
+        this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.getContentPane().setBackground(java.awt.Color.WHITE);
         JPanel topPanel = new JPanel();
         topPanel.setBackground(new Color (0,0,255)); // Establecer fondo blanco al panel
-
         jLabel1.setForeground(Color.WHITE);
         // Mover el JLabel al topPanel
         topPanel.add(jLabel1);
 
         // Establecer el layout del JFrame
         this.getContentPane().setLayout(new BorderLayout());
-
         // Agregar el topPanel al JFrame en la parte superior (NORTH)
         this.getContentPane().add(topPanel, BorderLayout.NORTH);
-
         
+        //agregar el boton salir
+          JButton salir = new JButton("SALIR");
+            salir.setIcon(new ImageIcon(getClass().getResource("/IMAGENES/salir2.png")));
+         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+          bottomPanel.add(salir);
+         this.getContentPane().add(bottomPanel, BorderLayout.SOUTH);
+            salir.addActionListener(e -> dispose());
     }
 
    
@@ -102,7 +107,7 @@ public class FRM_UTILIDAD extends javax.swing.JFrame {
         cnx.conectar();
       MostrarVentas();
     }//GEN-LAST:event_formWindowOpened
-
+ 
     
     public static void main(String args[]) {
       
